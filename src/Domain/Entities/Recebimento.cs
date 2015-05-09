@@ -40,5 +40,10 @@ namespace LGroup.ControleFinanceiro.Domain.Entities
             Tipo = recebimentoTipo;
             DataEntrada = DateTime.Now;
         }
+
+        public void AlterarCredito(Credito credito)
+        {
+            Credito = credito;
+        }
     }
 }
