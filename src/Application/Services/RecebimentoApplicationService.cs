@@ -47,17 +47,15 @@ namespace LGroup.ControleFinanceiro.Application.Services
                 );
         }
 
-        public void Adicionar(Dtos.RecebimentoDto recebimentoDto)
+        public void Adicionar(string nome, int codigoRecebimentoTipo, int codigoCredito)
         {
             //Criou a entidade de recebimento
             var recebimento =
-                new Recebimento(
-                    recebimentoDto.Nome,
-                    (RecebimentoTipo)recebimentoDto.CodigoRecebimentoTipo);
+                new Recebimento(nome, (RecebimentoTipo)codigoRecebimentoTipo);
 
             //Buscamos o crédito daquele recebimento
-            var credito = 
-                _creditoRepository.GetByCodigo(recebimentoDto.CodigoCredito);
+            var credito =
+                _creditoRepository.GetByCodigo(codigoCredito);
 
             //Definimos o crédito na entidade
             recebimento.AlterarCredito(credito);

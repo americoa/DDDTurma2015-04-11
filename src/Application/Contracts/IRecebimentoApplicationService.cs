@@ -11,6 +11,6 @@ namespace LGroup.ControleFinanceiro.Application.Contracts
     public interface IRecebimentoApplicationService
     {
         IEnumerable<RecebimentoDto> Consultar();
-        void Adicionar(RecebimentoDto recebimento);
+        void Adicionar(string nome, int codigoRecebimentoTipo, int codigoCredito);
     }
 }
