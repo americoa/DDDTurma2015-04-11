@@ -54,6 +54,7 @@
     <Compile Include="Mappings\CreditoMap.cs" />
     <Compile Include="Mappings\RecebimentoMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CreditoRepository.cs" />
     <Compile Include="Repositories\RecebimentoRepository.cs" />
   </ItemGroup>
   <ItemGroup>

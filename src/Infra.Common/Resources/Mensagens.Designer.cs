@@ -61,11 +61,29 @@ namespace LGroup.ControleFinanceiro.Infra.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ocorreu um erro inesperado no sistema.
+        /// </summary>
+        public static string ErroInesperado {
+            get {
+                return ResourceManager.GetString("ErroInesperado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to O nome não foi informado corretamente.
         /// </summary>
         public static string RecebimentoNomeVazio {
             get {
                 return ResourceManager.GetString("RecebimentoNomeVazio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O(s) registro(s) foi(ram) salvo(s) com sucesso.
+        /// </summary>
+        public static string SalvoComSucesso {
+            get {
+                return ResourceManager.GetString("SalvoComSucesso", resourceCulture);
             }
         }
     }

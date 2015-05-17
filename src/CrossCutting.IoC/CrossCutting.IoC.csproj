@@ -4,19 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{115096B6-575B-44B1-85DC-12A26A9E5B06}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <ProjectGuid>{290C9E80-C91B-4F85-A9A9-EF17248681B0}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LGroup.ControleFinanceiro.UI.WindowsForms</RootNamespace>
-    <AssemblyName>LGroup.ControleFinanceiro.UI.WindowsForms</AssemblyName>
+    <RootNamespace>LGroup.ControleFinanceiro.Infra.CrossCutting.IoC</RootNamespace>
+    <AssemblyName>LGroup.ControleFinanceiro.Infra.CrossCutting.IoC</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -26,7 +24,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -54,63 +51,32 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\RecebimentoModel.cs" />
-    <Compile Include="Models\RecebimentoTipoModel.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Containers\ApplicationServiceContainer.cs" />
+    <Compile Include="Containers\DbContextContainer.cs" />
+    <Compile Include="Containers\DomainServiceContainer.cs" />
+    <Compile Include="Containers\RepositoryContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\RecebimentoView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\RecebimentoView.Designer.cs">
-      <DependentUpon>RecebimentoView.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="Views\RecebimentoView.resx">
-      <DependentUpon>RecebimentoView.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="packages.config" />
-    <None Include="Properties\DataSources\LGroup.ControleFinanceiro.UI.WindowsForms.Models.RecebimentoModel.datasource" />
-    <None Include="Properties\DataSources\LGroup.ControleFinanceiro.UI.WindowsForms.Models.RecebimentoTipoModel.datasource" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
+    <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Application\Application.csproj">
       <Project>{dfd4c6f7-c5e0-467b-bbc8-cec1eaac2858}</Project>
       <Name>Application</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CrossCutting.IoC\CrossCutting.IoC.csproj">
-      <Project>{290c9e80-c91b-4f85-a9a9-ef17248681b0}</Project>
-      <Name>CrossCutting.IoC</Name>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{93c3c407-53b3-46d9-ae51-e548bcc74d15}</Project>
+      <Name>Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Infra.Common\Infra.Common.csproj">
-      <Project>{60fb1507-28dc-4e85-8a9a-22ce736ed04b}</Project>
-      <Name>Infra.Common</Name>
+    <ProjectReference Include="..\Infra.Data\Infra.Data.csproj">
+      <Project>{52ab4bf0-44d1-487b-9f2c-26075eebe308}</Project>
+      <Name>Infra.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

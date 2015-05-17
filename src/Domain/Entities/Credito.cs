@@ -20,6 +20,7 @@ namespace LGroup.ControleFinanceiro.Domain.Entities
             Recebimentos = new Collection<Recebimento>();
         }
 
+        public string Descricao { get; set; }
         public ICollection<Recebimento> Recebimentos { get; set; }
 
         public void AdicionarRecebimento(Recebimento recebimento)

@@ -35,7 +35,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecebimentoView));
             this.recebimentoModelBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.recebimentoModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -50,6 +49,7 @@
             this.codigoCreditoComboBox = new System.Windows.Forms.ComboBox();
             this.codigoRecebimentoTipoComboBox = new System.Windows.Forms.ComboBox();
             this.nomeTextBox = new System.Windows.Forms.TextBox();
+            this.recebimentoModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             codigoCreditoLabel = new System.Windows.Forms.Label();
             codigoRecebimentoTipoLabel = new System.Windows.Forms.Label();
             nomeLabel = new System.Windows.Forms.Label();
@@ -126,10 +126,6 @@
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
-            // 
-            // recebimentoModelBindingSource
-            // 
-            this.recebimentoModelBindingSource.DataSource = typeof(LGroup.ControleFinanceiro.UI.WindowsForms.Models.RecebimentoModel);
             // 
             // bindingNavigatorCountItem
             // 
@@ -244,6 +240,10 @@
             this.nomeTextBox.Name = "nomeTextBox";
             this.nomeTextBox.Size = new System.Drawing.Size(121, 22);
             this.nomeTextBox.TabIndex = 6;
+            // 
+            // recebimentoModelBindingSource
+            // 
+            this.recebimentoModelBindingSource.DataSource = typeof(LGroup.ControleFinanceiro.UI.WindowsForms.Models.RecebimentoModel);
             // 
             // RecebimentoView
             // 

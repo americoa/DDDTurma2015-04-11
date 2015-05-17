@@ -11,6 +11,11 @@ using System.Windows.Forms;
 using LGroup.ControleFinanceiro.Application.Contracts;
 using System.Collections;
 using LGroup.ControleFinanceiro.UI.WindowsForms.Models;
+using LGroup.ControleFinanceiro.Infra.Common.Resources;
+using LGroup.ControleFinanceiro.Application.Services;
+
+//using LGroup.ControleFinanceiro.Infra.Data.Repositories;
+//using LGroup.ControleFinanceiro.Infra.Data.Contexts;
 
 namespace LGroup.ControleFinanceiro.UI.WindowsForms.Views
 {
@@ -18,8 +23,35 @@ namespace LGroup.ControleFinanceiro.UI.WindowsForms.Views
     {
         private readonly IRecebimentoApplicationService _recebimentoApplicationService;
 
-        public RecebimentoView()
+        //Forma tradicional, sem o IoC
+        //public RecebimentoView()
+        //{
+        //    //Instânciamos o dbContext para os repositórios
+        //    ControleFinanceiroContext controleFinanceiroContext =
+        //        new ControleFinanceiroContext();
+
+        //    //Instânciamos os repositórios para o application service
+        //    RecebimentoRepository recebimentoRepository =
+        //        new RecebimentoRepository(controleFinanceiroContext);
+        //    CreditoRepository creditoRepository =
+        //         new CreditoRepository(controleFinanceiroContext);
+
+        //    //Enfim, conseguimos instânciar o ApplicationService
+        //    _recebimentoApplicationService =
+        //        new RecebimentoApplicationService(
+        //            recebimentoRepository, creditoRepository);
+
+        //    InitializeComponent();
+        //}
+
+        //---------------------------------------
+
+        //Forma com o IoC
+        public RecebimentoView(IRecebimentoApplicationService recebimentoApplicationService)
         {
+            _recebimentoApplicationService = recebimentoApplicationService;
+            
+            //Carrega a tela
             InitializeComponent();
         }
 
@@ -35,9 +67,43 @@ namespace LGroup.ControleFinanceiro.UI.WindowsForms.Views
             var listaDeRecebimento =
                 (IList<RecebimentoModel>)recebimentoModelBindingSource.List;
 
+
+            var erros = new List<ApplicationException>();
+
             foreach (var item in listaDeRecebimento)
-                _recebimentoApplicationService.Adicionar(
-                    item.Nome, item.Tipo.Codigo, item.CodigoCredito);
+            {
+                try
+                {
+                    _recebimentoApplicationService.Adicionar(
+                        item.Nome, item.Tipo.Codigo, item.CodigoCredito);
+                }
+                catch (ApplicationException ex)
+                {
+                    erros.Add(ex);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(Mensagens.ErroInesperado);
+                    Close();
+                }
+            }
+
+            //Se não contém erros, exibe uma mensagem com OK
+            if (erros.Count == 0)
+                MessageBox.Show(Mensagens.SalvoComSucesso);
+            //Se não, exibe os erros na tela
+            else
+            {
+                //StringBuilder é uma forma performática de criar strings
+                StringBuilder stringBuilder = new StringBuilder();
+
+                //Adicio cada erro no meu stringBuilder
+                foreach (var erro in erros)
+                    stringBuilder.AppendLine(erro.Message);
+
+                //Exibo a mensagem completa
+                MessageBox.Show(stringBuilder.ToString());
+            }
         }
 
         private void RecebimentoView_Load(object sender, EventArgs e)
