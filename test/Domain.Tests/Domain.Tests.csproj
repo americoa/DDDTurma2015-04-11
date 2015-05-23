@@ -51,6 +51,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Entities\CreditoTest.cs" />
+    <Compile Include="Entities\DebitoTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
