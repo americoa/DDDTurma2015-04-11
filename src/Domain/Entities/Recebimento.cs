@@ -16,7 +16,7 @@ namespace LGroup.ControleFinanceiro.Domain.Entities
         // que classes de fora alterem o escopo da classe responsável,
         // que neste caso, é a classe Recebimento
         public string Nome { get; private set; }
-        public RecebimentoTipo Tipo { get; private set; }
+        public Tipo Tipo { get; private set; }
         public DateTime DataEntrada { get; private set; }
 
         public int CodigoCredito { get; private set; }
@@ -27,7 +27,7 @@ namespace LGroup.ControleFinanceiro.Domain.Entities
         //Utilizamos o construtor do objeto para trazer um cenário da "vida real",
         // onde falamos que para criar um recebimento, é obrigatório informar
         // um nome e um tipo
-        public Recebimento(string nome, RecebimentoTipo recebimentoTipo)
+        public Recebimento(string nome, Tipo recebimentoTipo)
         {
             if (string.IsNullOrWhiteSpace(nome))
                 //Criamos o resource Mensagens para centralizar as mensagens

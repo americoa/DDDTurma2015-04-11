@@ -44,7 +44,7 @@ namespace LGroup.ControleFinanceiro.Domain.Tests.Entities
             //arrange: Criar os objetos necessários 
             //         para a execução do teste
             Credito credito = new Credito();
-            RecebimentoTipo recebimentoTipo = RecebimentoTipo.Esporádico;
+            Tipo recebimentoTipo = Tipo.Esporadico;
             const string nomeRecebimento = "Salário";
             Recebimento recebimento = new Recebimento(nomeRecebimento, recebimentoTipo);
 
@@ -62,7 +62,7 @@ namespace LGroup.ControleFinanceiro.Domain.Tests.Entities
             //arrange
             const string nomeRecebimento = "Aluguel";
             DateTime dataEntrada = DateTime.Now;
-            RecebimentoTipo tipoRecebimento = RecebimentoTipo.Fixo;
+            Tipo tipoRecebimento = Tipo.Fixo;
 
             //act
             //Pausa a Thread atual em milisegundos, 
@@ -88,7 +88,7 @@ namespace LGroup.ControleFinanceiro.Domain.Tests.Entities
 
             //arrange
             string nomeRecebimento = string.Empty;
-            RecebimentoTipo recebimentoTipo = RecebimentoTipo.Fixo;
+            Tipo recebimentoTipo = Tipo.Fixo;
 
             //act
             Recebimento recebimento =

@@ -108,9 +108,9 @@
       <Project>{290c9e80-c91b-4f85-a9a9-ef17248681b0}</Project>
       <Name>CrossCutting.IoC</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Infra.Common\Infra.Common.csproj">
+    <ProjectReference Include="..\Infra.Common\CrossCutting.Common.csproj">
       <Project>{60fb1507-28dc-4e85-8a9a-22ce736ed04b}</Project>
-      <Name>Infra.Common</Name>
+      <Name>CrossCutting.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -9,9 +9,9 @@ namespace LGroup.ControleFinanceiro.Domain.ValueObjects
     //Enum: É uma enumeração com valores fixos.
     //Quando utilizar: Quando não existe uma frequência alta
     //                 de alteração daquela situação ou estratégia
-    public enum RecebimentoTipo
+    public enum Tipo
     {
         Fixo = 1,
-        Esporádico = 2
+        Esporadico = 2
     }
 }

@@ -61,11 +61,47 @@ namespace LGroup.ControleFinanceiro.Infra.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A data do pagamento está inválida.
+        /// </summary>
+        public static string DataPagamentoInvalida {
+            get {
+                return ResourceManager.GetString("DataPagamentoInvalida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A data do vencimento do pagamento está inválida.
+        /// </summary>
+        public static string DataVencimentoPagamentoInvalida {
+            get {
+                return ResourceManager.GetString("DataVencimentoPagamentoInvalida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A descrição do pagamento está inválida.
+        /// </summary>
+        public static string DescricaoPagamentoInvalida {
+            get {
+                return ResourceManager.GetString("DescricaoPagamentoInvalida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ocorreu um erro inesperado no sistema.
         /// </summary>
         public static string ErroInesperado {
             get {
                 return ResourceManager.GetString("ErroInesperado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O pagamento do débito está inválido.
+        /// </summary>
+        public static string PagamentoDebitoInvalido {
+            get {
+                return ResourceManager.GetString("PagamentoDebitoInvalido", resourceCulture);
             }
         }
         

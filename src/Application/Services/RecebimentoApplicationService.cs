@@ -51,7 +51,7 @@ namespace LGroup.ControleFinanceiro.Application.Services
         {
             //Criou a entidade de recebimento
             var recebimento =
-                new Recebimento(nome, (RecebimentoTipo)codigoRecebimentoTipo);
+                new Recebimento(nome, (Tipo)codigoRecebimentoTipo);
 
             //Buscamos o crédito daquele recebimento
             var credito =

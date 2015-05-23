@@ -117,8 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DataPagamentoInvalida" xml:space="preserve">
+    <value>A data do pagamento está inválida</value>
+  </data>
+  <data name="DataVencimentoPagamentoInvalida" xml:space="preserve">
+    <value>A data do vencimento do pagamento está inválida</value>
+  </data>
+  <data name="DescricaoPagamentoInvalida" xml:space="preserve">
+    <value>A descrição do pagamento está inválida</value>
+  </data>
   <data name="ErroInesperado" xml:space="preserve">
     <value>Ocorreu um erro inesperado no sistema</value>
+  </data>
+  <data name="PagamentoDebitoInvalido" xml:space="preserve">
+    <value>O pagamento do débito está inválido</value>
   </data>
   <data name="RecebimentoNomeVazio" xml:space="preserve">
     <value>O nome não foi informado corretamente</value>

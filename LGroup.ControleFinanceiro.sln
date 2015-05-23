@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "src\Domain\Domain
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Tests", "test\Domain.Tests\Domain.Tests.csproj", "{2FEDED6E-F521-4DD4-99B8-C7D74D3856D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra.Common", "src\Infra.Common\Infra.Common.csproj", "{60FB1507-28DC-4E85-8A9A-22CE736ED04B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossCutting.Common", "src\Infra.Common\CrossCutting.Common.csproj", "{60FB1507-28DC-4E85-8A9A-22CE736ED04B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra.Data", "src\Infra.Data\Infra.Data.csproj", "{52AB4BF0-44D1-487B-9F2C-26075EEBE308}"
 EndProject
