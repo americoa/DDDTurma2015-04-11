@@ -19,6 +19,7 @@ namespace LGroup.ControleFinanceiro.Domain.Tests.Entities
             Pagamento pagamento = new Pagamento();
             Debito debito;
 
+
             //act
             debito = new Debito(tipo, pagamento);
 
