@@ -45,11 +45,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collections\Core\BaseCollection.cs" />
+    <Compile Include="Collections\RecebimentoCollection.cs" />
     <Compile Include="Contracts\Repositories\ICreditoRepository.cs" />
     <Compile Include="Contracts\Repositories\IRecebimentoRepository.cs" />
     <Compile Include="Core\BaseEntity.cs" />
     <Compile Include="Entities\Credito.cs" />
     <Compile Include="Entities\Debito.cs" />
+    <Compile Include="Factories\RecebimentoFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\Recebimento.cs" />
     <Compile Include="Entities\Pagamento.cs" />
@@ -58,7 +61,6 @@
   <ItemGroup>
     <Folder Include="Aggregates\" />
     <Folder Include="Contracts\Services\" />
-    <Folder Include="Factories\" />
     <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>

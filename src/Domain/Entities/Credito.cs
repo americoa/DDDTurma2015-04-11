@@ -7,6 +7,7 @@ using LGroup.ControleFinanceiro.Domain.ValueObjects;
 
 //Contém a classe Collection para trabalhar com coleção
 using System.Collections.ObjectModel;
+using LGroup.ControleFinanceiro.Domain.Collections;
 
 namespace LGroup.ControleFinanceiro.Domain.Entities
 {
@@ -17,11 +18,11 @@ namespace LGroup.ControleFinanceiro.Domain.Entities
     {
         public Credito()
         {
-            Recebimentos = new Collection<Recebimento>();
+            Recebimentos = new RecebimentoCollection();
         }
 
-        public string Descricao { get; set; }
-        public ICollection<Recebimento> Recebimentos { get; set; }
+        public string Descricao { get; private set; }
+        public RecebimentoCollection Recebimentos { get; private set; }
 
         public void AdicionarRecebimento(Recebimento recebimento)
         {

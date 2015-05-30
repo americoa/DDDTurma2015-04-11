@@ -22,6 +22,9 @@ namespace LGroup.ControleFinanceiro.Infra.Data.Contexts
         public ControleFinanceiroContext()
             : base(@"Data Source=(localdb)\ProjectsV12;Initial Catalog=ControleFinanceiro;Integrated Security=true")
         {
+            Configuration.LazyLoadingEnabled = false;
+            Configuration.ProxyCreationEnabled = false;
+            //Configuration.AutoDetectChangesEnabled = false;
         }
 
         public DbSet<Credito> Creditos { get; set; }
