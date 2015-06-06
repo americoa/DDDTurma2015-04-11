@@ -61,11 +61,29 @@ namespace LGroup.ControleFinanceiro.Infra.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Não é possível fazer um agendamento aos sábados ou domingos.
+        /// </summary>
+        public static string AgendamentoSabadoDomingoInvalido {
+            get {
+                return ResourceManager.GetString("AgendamentoSabadoDomingoInvalido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A data do pagamento está inválida.
         /// </summary>
         public static string DataPagamentoInvalida {
             get {
                 return ResourceManager.GetString("DataPagamentoInvalida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Não foi(ram) informado(s) o(s) dia(s) para o agendamento.
+        /// </summary>
+        public static string DatasNaoInformadasNoAgendamento {
+            get {
+                return ResourceManager.GetString("DatasNaoInformadasNoAgendamento", resourceCulture);
             }
         }
         
@@ -97,11 +115,38 @@ namespace LGroup.ControleFinanceiro.Infra.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ocorreu um erro não identificado.
+        /// </summary>
+        public static string ErroNaoIdentificado {
+            get {
+                return ResourceManager.GetString("ErroNaoIdentificado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to O pagamento do débito está inválido.
         /// </summary>
         public static string PagamentoDebitoInvalido {
             get {
                 return ResourceManager.GetString("PagamentoDebitoInvalido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O pagamento está inválido.
+        /// </summary>
+        public static string PagamentoInvalido {
+            get {
+                return ResourceManager.GetString("PagamentoInvalido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to O crédito do recebimento está inválido.
+        /// </summary>
+        public static string RecebimentoCreditoInvalido {
+            get {
+                return ResourceManager.GetString("RecebimentoCreditoInvalido", resourceCulture);
             }
         }
         

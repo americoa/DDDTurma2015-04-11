@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 using LGroup.ControleFinanceiro.Domain.ValueObjects;
-
 using LGroup.ControleFinanceiro.Infra.Common.Resources;
+using BM.Validations;
 
 namespace LGroup.ControleFinanceiro.Domain.Entities
 {
@@ -43,7 +43,10 @@ namespace LGroup.ControleFinanceiro.Domain.Entities
 
         public void AlterarCredito(Credito credito)
         {
+            ValidatorHelper.GarantirNaoNulo(credito, Mensagens.RecebimentoCreditoInvalido);
+
             Credito = credito;
+            CodigoCredito = credito.Codigo;
         }
     }
 }
