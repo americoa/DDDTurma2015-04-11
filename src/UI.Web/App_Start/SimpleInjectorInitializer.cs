@@ -33,7 +33,7 @@ namespace UI.Web.App_Start
      
         private static void InitializeContainer(Container container)
         {
-            Startup.Register(container);
+            Startup.Register(container, new WebRequestLifestyle());
         }
     }
 }

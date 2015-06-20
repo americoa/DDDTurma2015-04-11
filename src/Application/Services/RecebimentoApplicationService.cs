@@ -11,7 +11,8 @@ using LGroup.ControleFinanceiro.Domain.ValueObjects;
 namespace LGroup.ControleFinanceiro.Application.Services
 {
     public sealed class RecebimentoApplicationService
-        : Contracts.IRecebimentoApplicationService
+        : Core.BaseApplication
+        , Contracts.IRecebimentoApplicationService
     {
         //Váriáveis internas para para receber
         // a injeção de dependência via construtor
@@ -60,8 +61,16 @@ namespace LGroup.ControleFinanceiro.Application.Services
             //Definimos o crédito na entidade
             recebimento.AlterarCredito(credito);
 
+            //Iniciamos o nosso Unit Of Work através da nossa classe
+            // BaseApplication
+            Begin();
+
             //Salvamos no banco
             _recebimentoRepository.Add(recebimento);
+
+            //Efetuamos (comitamos) as alterações pelo nosso
+            // Unit of Work através da nossa classe BaseApplication
+            SaveChanges();
         }
     }
 }

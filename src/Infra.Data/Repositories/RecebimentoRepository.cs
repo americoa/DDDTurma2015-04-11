@@ -28,7 +28,8 @@ namespace LGroup.ControleFinanceiro.Infra.Data.Repositories
         public void Add(Recebimento recebimento)
         {
             _controleFinanceiroContext.Recebimentos.Add(recebimento);
-            _controleFinanceiroContext.SaveChanges();
+            //Tiramos o SaveChanges, pois estamos utilizando o UoW.
+            //_controleFinanceiroContext.SaveChanges();
         }
     }
 }

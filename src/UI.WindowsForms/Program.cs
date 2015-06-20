@@ -39,7 +39,7 @@ namespace LGroup.ControleFinanceiro.UI.WindowsForms
 
             //Chamamos a nossa camada para registrar as classes 
             // no container
-            Startup.Register(_container);
+            Startup.Register(_container, Lifestyle.Singleton);
 
             //Registramos as nossas telas de windows forms
             _container.RegisterForms();

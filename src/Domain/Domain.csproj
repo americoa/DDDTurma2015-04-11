@@ -51,6 +51,8 @@
     <Compile Include="Contracts\Repositories\IPagamentoRepository.cs" />
     <Compile Include="Contracts\Repositories\IRecebimentoRepository.cs" />
     <Compile Include="Contracts\Services\IAgendamentoPagamentoDomainService.cs" />
+    <Compile Include="Contracts\UnitsOfWork\IControleFinanceiroContextUnitOfWork.cs" />
+    <Compile Include="Contracts\UnitsOfWork\Core\IUnitOfWork.cs" />
     <Compile Include="Core\BaseEntity.cs" />
     <Compile Include="Entities\Credito.cs" />
     <Compile Include="Entities\Debito.cs" />
